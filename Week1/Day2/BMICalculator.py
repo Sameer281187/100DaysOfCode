@@ -7,4 +7,5 @@ weight = float(input("Please enter the weight in kg: "))
 # Calculate the bmi using weight and height.
 bmi = round(weight/(height ** 2), 2)
 
-print("The BMI for " + user_name + " is: " + str(bmi))
+print(f"The BMI for {user_name} is: {bmi}")
+# The above concept is f-strings where we can add character f before the string and add variables without any type conversion/ casting
