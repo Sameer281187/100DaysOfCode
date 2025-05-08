@@ -5,6 +5,6 @@ height = float(input("Please enter the height in metres: "))
 weight = float(input("Please enter the weight in kg: "))
 
 # Calculate the bmi using weight and height.
-bmi = weight/(height ** 2)
+bmi = round(weight/(height ** 2), 2)
 
 print("The BMI for " + user_name + " is: " + str(bmi))
