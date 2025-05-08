@@ -1,0 +1,10 @@
+print("Welcome to Body Mass Index Calculator. Enter some details to calculate your Body Mass Index.")
+
+user_name = input("Please enter the name of the user: ")
+height = float(input("Please enter the height in metres: "))
+weight = float(input("Please enter the weight in kg: "))
+
+# Calculate the bmi using weight and height.
+bmi = weight/(height ** 2)
+
+print("The BMI for " + user_name + " is: " + str(bmi))
