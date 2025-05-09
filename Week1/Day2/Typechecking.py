@@ -1,4 +1,4 @@
-# checking the different data types that are present in python
+# Checking the different data types that are present in python
 
 # String data type
 print(type("abc"))
