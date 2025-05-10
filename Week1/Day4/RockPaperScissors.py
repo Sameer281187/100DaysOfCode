@@ -25,7 +25,7 @@ elif player_1_selection == 1:
     `-..__ '"---..._;"
           """"----'  
     ''')
-else:
+elif player_1_selection == 2:
     print('''
    ____
   / __ \
@@ -36,6 +36,9 @@ else:
  ( (__) |
   \____/
     ''')
+else:
+    print("You entered an invalid number. You lose")
+    exit(1)
 
 computer_selection = random.randint(0,2)
 
