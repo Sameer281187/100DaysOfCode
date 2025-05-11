@@ -30,7 +30,7 @@ scissors = '''
   \____/
 '''
 print("***********************Welcome to Rock Paper and Scissors game***********************")
-game_values = ["Rock", "Paper", "Scissors"]
+#game_values = ["Rock", "Paper", "Scissors"]
 player_1_selection = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors\n"))
 
 print("Player 1 chose: \n \n")
