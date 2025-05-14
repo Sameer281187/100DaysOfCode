@@ -1,0 +1,20 @@
+On Day 6, we practiced basic to advanced level problems on website
+https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Alone&url=worlds%2Ftutorial_en%2Falone.json
+
+There were 5 problems solved
+- Hurdle 1
+- Hurdle 2
+- Hurdle 3
+- Hurdle 4
+- Maze
+
+The level of difficulty increases with each level and helps understand following concepts
+
+- while loop
+- if else within while loop
+- Logical thinking
+- problem-solving
+
+I would recommend everyone to try out these challenges
+
+Thank you
