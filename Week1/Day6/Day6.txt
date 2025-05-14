@@ -11,6 +11,7 @@ There were 5 problems solved
 The level of difficulty increases with each level and helps understand following concepts
 
 - while loop
+- functions or methods
 - if else within while loop
 - Logical thinking
 - problem-solving
