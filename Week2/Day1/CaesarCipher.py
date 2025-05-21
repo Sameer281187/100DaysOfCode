@@ -8,7 +8,7 @@ def modify_message(message, shift_no, encoding):
         else:
             for letter in alphabets:
                 if char.lower() == letter:
-                    resultant_message += alphabets[(alphabets.index(letter) + shift_no) % 26]
+                    resultant_message += alphabets[(alphabets.index(letter) + shift_no) % len(alphabets)]
     print(f"Here's the {encoding}d result: {resultant_message}")
 
 
