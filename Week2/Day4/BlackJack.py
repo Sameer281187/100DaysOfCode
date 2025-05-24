@@ -2,6 +2,7 @@ import random
 import BlackJackArt
 
 def initial_draw(all_cards):
+    """ Draws the initial two card numbers for player and one card number for computer"""
     for i in range(2):
         if i < 1:
             cards_drawn["player"].append(random.choice(all_cards))
@@ -10,23 +11,28 @@ def initial_draw(all_cards):
             cards_drawn["player"].append(random.choice(all_cards))
 
 def check_win_by_blackjack(score):
+    """ Checks if the player wins by blackjack after initial draw"""
     if score == 21:
         print("Won by Blackjack. You won")
         exit(1)
 
 def display_initial_scores(player, cards):
+    """Displays the scores of player and computer after each card draw made by player"""
     print(f"Your Cards: {cards["player"]}, current score: {player}")
     print(f"Computer's first card: {cards["computer"][0]}")
 
 def want_to_play():
+    """Checks with player if they want to continue playing"""
     is_play = input("Do you want to play a game of blackjack? Type 'y' or 'n': ")
     continue_play = True if is_play == "y" else False
     return continue_play
 
 def display_graphics():
+    """Displays the BLACKJACK graphics at start of each round"""
     print(BlackJackArt.blackjack_art)
 
 def display_final_result(player, computer):
+    """ Checks the final result and declares the winner"""
     if player > 21:
         print("You went over, You Lose")
     elif computer > 21:
