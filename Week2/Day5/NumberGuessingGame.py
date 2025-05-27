@@ -1,4 +1,5 @@
 import random
+import art
 
 def guess_a_number():
     return int(input("Make a guess: "))
@@ -13,6 +14,7 @@ def reduce_attempt_count(attempt, message):
         print("You have run out of guesses. Refresh the page to run again.")
     return attempt
 
+print(art.logo)
 print("Welcome to the Number Guessing Game !")
 print("I am thinking of a number between 1 and 100. ")
 
