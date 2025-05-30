@@ -9,14 +9,11 @@ def print_report(current_report):
     ''')
 
 def check_resources(current_report, choice):
-    if current_report["water"] < CoffeeData.data[choice]["ingredients"]["water"]:
-        return "Sorry there is not enough water."
-    elif current_report["coffee"] < CoffeeData.data[choice]["ingredients"]["coffee"]:
-        return "Sorry there is not enough coffee."
-    elif current_report["milk"] < CoffeeData.data[choice]["ingredients"]["milk"]:
-        return "Sorry there is not enough milk."
-    else:
-        return "Preparing your drink"
+    for key in current_report:
+        if key != "money":
+            if current_report[key] < CoffeeData.data[choice]["ingredients"][key]:
+                return f"Sorry there is not enough {key}"
+    return "Preparing your drink"
 
 def input_coins_and_calculate_amount():
     amount = 0
