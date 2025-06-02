@@ -69,8 +69,7 @@ while run_coffee_machine:
         resource_check = check_resources(ingredients_report, user_choice)
         if resource_check == "Preparing your drink":
             amount_entered = input_coins_and_calculate_amount()
-            is_drink_prepared = check_sufficient_coins_entered(amount_entered, user_choice)
-            if is_drink_prepared:
+            if check_sufficient_coins_entered(amount_entered, user_choice):
                 ingredients_report = prepare_drink(ingredients_report, user_choice)
         else:
             print(resource_check)
