@@ -8,6 +8,7 @@ screen = Screen()
 screen.setup(600, 600)
 screen.bgcolor("black")
 screen.title("The Snake")
+time.sleep(5)
 screen.tracer(0)
 
 screen.listen()
@@ -37,8 +38,6 @@ while game_is_on:
         score.game_over()
 
     for segment in snake.snakes[1:]:
-        # if segment == snake.head:
-        #     pass
         if snake.head.distance(segment) < 10:
             game_is_on = False
             score.game_over()
