@@ -49,6 +49,3 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
-
-    def increase_snake_length(self):
-        pass
