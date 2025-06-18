@@ -13,6 +13,7 @@ screen = Screen()
 screen.setup(800, 600)
 screen.bgcolor("black")
 screen.title("The Pong game")
+time.sleep(8)
 screen.tracer(0)
 
 screen.listen()
@@ -28,9 +29,6 @@ screen.onkeypress(right_paddle.move_down, "Down")
 
 screen.onkeypress(left_paddle.move_up, "w")
 screen.onkeypress(left_paddle.move_down, "s")
-
-x_fac = 1
-y_fac = 1
 
 game_is_on = True
 while game_is_on:
