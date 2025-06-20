@@ -1,6 +1,7 @@
 INVITED_LIST_OF_NAMES = "Input/Names/invited_names.txt"
 INVITATION_LETTER_TEMPLATE = "Input/Letters/starting_letter.txt"
 OUTPUT_DESTINATION = "Output/ReadyToSend/"
+PLACEHOLDER = "[name]"
 
 def get_names(filename):
     with open(filename) as guests:
@@ -20,5 +21,5 @@ guest_list = get_names(INVITED_LIST_OF_NAMES)
 letter_template = read_sample_letter(INVITATION_LETTER_TEMPLATE)
 
 for name in guest_list:
-    final_letter = letter_template.replace("[name]", name.strip("\n"))
+    final_letter = letter_template.replace(PLACEHOLDER, name.strip("\n"))
     create_invitation_letter_at_destination(f"{OUTPUT_DESTINATION}letter_for_{name.strip("\n")}.txt", final_letter)
