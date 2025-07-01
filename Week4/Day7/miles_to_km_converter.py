@@ -7,7 +7,7 @@ window.config(padx= 30, pady= 20)
 
 def convert_to_km():
     km_value = float(miles_entry.get()) * 1.60934
-    result_value.config(text=str(round(km_value, 2)))
+    result_value.config(text=f"{(round(km_value, 2))}")
 
 miles_label = Label(text= "Miles", font= ("Ariel", 11))
 miles_label.grid(column=4, row=2)
