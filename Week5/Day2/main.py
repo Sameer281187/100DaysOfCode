@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import random
+import json
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def generate_password():
     letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
@@ -24,6 +25,12 @@ def generate_password():
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_data_to_file():
+    new_data = {
+        website_entry.get(): {
+            "username" : username_entry.get(),
+            "password" : password_entry.get()
+        }
+    }
     if len(website_entry.get()) == 0:
         messagebox.showinfo(title="Missing Details", message="The Website field cannot be left empty.")
     elif len(username_entry.get()) == 0:
@@ -37,8 +44,12 @@ def save_data_to_file():
                                                        f"Password: {password_entry.get()} \n"
                                                        f"Confirm if the details are correct ?")
         if user_response:
-            with open("data.txt", "a") as data:
-                data.write(f"{website_entry.get()} | {username_entry.get()} | {password_entry.get()} \n")
+            with open("data.json", "r") as data_file:
+                data = json.load(data_file)
+                data.update(new_data)
+            with open("data.json", "w") as data_file:
+                json.dump(data, data_file, indent=4)
+                
             website_entry.delete(0, END)
             password_entry.delete(0, END)
             messagebox.showinfo(title="Data Saved Successfully", message="Your data is saved successfully")
