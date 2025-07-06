@@ -4,24 +4,24 @@ letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n",
 symbols = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "?"]
 numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-no_of_letters = int(input("Enter the number of letters that you want in your password: "))
-no_of_symbols = int(input("Enter the number of symbols that you want in your password: "))
-no_of_numbers = int(input("Enter the number of numbers that you want in your password: "))
+no_of_letters = random.randint(8,10)
+no_of_symbols = random.randint(2,4)
+no_of_numbers = random.randint(2,4)
 
-password_char_list = []
-for i in range(0, no_of_letters):
-    password_char_list.append(random.choice(letters))
-
-for i in range(0, no_of_symbols):
-    password_char_list.append(random.choice(symbols))
-
-for i in range(0, no_of_numbers):
-    password_char_list.append(random.choice(numbers))
-
+letters_list = [random.choice(letters) for _ in range(no_of_letters)]
+    # for i in range(0, no_of_letters):
+    #     password_char_list.append(random.choice(letters))
+symbol_list = [random.choice(symbols) for _ in range(no_of_symbols)]
+    # for i in range(0, no_of_symbols):
+    #     password_char_list.append(random.choice(symbols))
+number_list = [random.choice(numbers) for _ in range(no_of_numbers)]
+    # for i in range(0, no_of_numbers):
+    #     password_char_list.append(random.choice(numbers))
+password_char_list = letters_list + symbol_list + number_list
 random.shuffle(password_char_list)
 
-final_password =""
-for char in password_char_list:
-    final_password += char
+final_password = "".join(password_char_list)
+# for char in password_char_list:
+#     final_password += char
 
 print(final_password)
