@@ -59,6 +59,27 @@ def save_data_to_file():
                 password_entry.delete(0, END)
             messagebox.showinfo(title="Data Saved Successfully", message="Your data is saved successfully")
 
+# ---------------------------- SEARCH EXISTING PASSWORDS ------------------------------- #
+def find_password():
+    website = website_entry.get().title()
+    is_value_present = False
+    try:
+        with open("data.json") as data_file:
+            data = json.load(data_file)
+    except:
+        messagebox.showinfo(title="No Data File Found", message="You do not have details saved for any of your account")
+    else:
+        for key in data.keys():
+            if key == website:
+                is_value_present = True
+                break
+        if is_value_present:
+            messagebox.showinfo(title="Your Details", message=f"Here are your credentials for {key}: \n"
+                                                              f"Username: {data[key]["username"]}\n"
+                                                              f"Password: {data[key]["password"]}")
+        else:
+            messagebox.showinfo(title="No Details Exist", message="You do not have any saved details for this account")
+
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -83,8 +104,8 @@ password_label = Label(text="Password:")
 password_label.grid(row=4, column=1)
 password_label.config(padx=5, pady= 5)
 
-website_entry = Entry(width=55)
-website_entry.grid(row=2, column=2, columnspan=2)
+website_entry = Entry(width=34)
+website_entry.grid(row=2, column=2)
 website_entry.focus()
 
 username_entry = Entry(width=55)
@@ -99,5 +120,8 @@ add_button.grid(row=5, column=2, columnspan=2)
 
 generate_password_button = Button(text="Generate Password", width=16, command=generate_password)
 generate_password_button.grid(row=4, column=3)
+
+search_button = Button(text="Search", width=16, command=find_password)
+search_button.grid(row=2, column=3)
 
 window.mainloop()

@@ -1,6 +1,0 @@
-facebook | abc@xyz.com | 12345678 
-Amazon | abc@xyz.com | 87654321 
-Ebay | def@pqr.com | abdctiond 
-Amazon | abc@xyz.com | 8903455 
-Reddit | abc@xyz.com | sdjfuefn43521 
-Quora | abc@xyz.com | u4sbsdufh 
