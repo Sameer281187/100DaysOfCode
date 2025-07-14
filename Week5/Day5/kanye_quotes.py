@@ -11,6 +11,7 @@ def get_quote():
 
 window = Tk()
 window.title("Kanye Quotes")
+window.config(padx=50, pady=50)
 
 bg_image = PhotoImage(file="background.png")
 canvas = Canvas(width=300, height=414)
