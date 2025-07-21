@@ -3,7 +3,7 @@ import smtplib
 import os
 
 URL = "https://api.openweathermap.org/data/2.5/forecast"
-API_KEY = "fa672cb3ae8e25ed3eb9531187d9be73"
+API_KEY = os.environ.get("OWM_API_KEY")
 LAT_VAL = 28.49
 LONG_VAL = 76.994
 MAIL_SERVER = "smtp.gmail.com"
