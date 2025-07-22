@@ -49,6 +49,7 @@ else:
     percentage_change = (prior_to_prev_close_price - prev_day_close_price) * 100 / prior_to_prev_close_price
     change_dir = "🔻"
 
+mail_content = ""
 if percentage_change > 1:
     news_url = "https://newsapi.org/v2/everything"
     news_params = {
@@ -59,29 +60,15 @@ if percentage_change > 1:
     news_response.raise_for_status()
 
     news_data = news_response.json()
-    mail_content = ""
+
 
     for i in range(3):
         mail_content += (f"Headline: {news_data["articles"][i]["title"]}\n"
                          f"Brief: {news_data["articles"][i]["description"]}\n\n")
 
     # Send a seperate message with the percentage change and each article's title and description to your phone number.
-    send_mail(mail_content, change_dir, percentage_change)
+    #send_mail(mail_content, change_dir, percentage_change)
+print(mail_content)
 
 
-
-## STEP 2: Use https://newsapi.org
-# Instead of printing ("Get News"), actually get the first 3 news pieces for the COMPANY_NAME.
-
-
-#Optional: Format the SMS message like this: 
-"""
-TSLA: 🔺2%
-Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
-Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
-or
-"TSLA: 🔻5%
-Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
-Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
-"""
 
