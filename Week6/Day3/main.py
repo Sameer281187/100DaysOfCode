@@ -34,7 +34,7 @@ duration = [item["duration_min"] for item in exercise_data["exercises"]]
 calories = [item["nf_calories"] for item in exercise_data["exercises"]]
 
 head = {
-    "Authorization" : os.environ.get("SHEETY_API_KEY")
+    "Authorization" : SHEETY_TOKEN
 }
 
 for i in range(len(exercise)):
