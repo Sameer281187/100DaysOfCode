@@ -1,6 +1,4 @@
-import turtle
 from turtle import Turtle
-
 from Project1_GeometryGame.Point import GuiPoint
 from Rectangle import GuiRect
 from Point import Point
