@@ -1,4 +1,4 @@
-from Project3_PhotoSearch.MainApp import MainApp
+from Project3_PhotoSearch.BaseApp import BaseApp
 
-main_app = MainApp()
+main_app = BaseApp()
 main_app.run()
