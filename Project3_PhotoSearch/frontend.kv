@@ -1,11 +1,19 @@
 <FirstScreen>:
     GridLayout:
         cols: 1
+        padding: [10, 20, 10, 20]
+        spacing: 10
         Image:
-            source: 'files/card.jpeg'
+            id: img
+            size_hint_y: .85
         TextInput:
+            id: user_query
+            size_hint_y: .05
+            hint_text: 'Describe the image that you want to search'
         Button:
             text: 'Search Image'
+            size_hint_y: .1
+            on_press: root.search_image()
 
 <RootWidget>:
     FirstScreen:
