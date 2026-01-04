@@ -1,6 +1,6 @@
-from Project2_FaltmateBillSharingApp.Bill import Bill
-from Project2_FaltmateBillSharingApp.Flatmate import Flatmate
-from Project2_FaltmateBillSharingApp.PdfReport import PdfReport
+from Project2_FaltmateBillSharingApp.flatmates_bill.Bill import Bill
+from Project2_FaltmateBillSharingApp.flatmates_bill.Flatmate import Flatmate
+from Project2_FaltmateBillSharingApp.flatmates_bill.PdfReport import PdfReport
 
 amount = float(input("Enter the monthly rent amount (in INR): "))
 period = input("Enter the month and year for which this amount is for (eg. November 2025): ")

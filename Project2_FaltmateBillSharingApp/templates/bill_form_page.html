@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Bill Form</title>
+    <link rel="stylesheet" href="static/main.css">
+</head>
+<body>
+    <h2>The Bill Form</h2>
+    <p class="description">
+        Please enter the required details in the below form to calculate the bill share per person
+    </p>
+    <form action="{{url_for('results_page')}}" method="post">
+        <strong>{{billForm.amount.label}}</strong> {{billForm.amount}}
+        <br>
+        <strong>{{billForm.period.label}}</strong> {{billForm.period}}
+        <hr>
+        <h3><p>First Flatmate</p></h3>
+        <strong>{{billForm.name_flatmate1.label}}</strong> {{billForm.name_flatmate1}}
+        <br>
+        <strong>{{billForm.days_in_house_flatmate1.label}}</strong> {{billForm.days_in_house_flatmate1}}
+        <hr>
+        <h3><p>Second Flatmate</p></h3>
+        <strong>{{billForm.name_flatmate2.label}}</strong> {{billForm.name_flatmate2}}
+        <br>
+        <strong>{{billForm.days_in_house_flatmate2.label}}</strong> {{billForm.days_in_house_flatmate2}}
+        <br>
+        {{billForm.calculate_button}}
+    </form>
+</body>
+</html>
